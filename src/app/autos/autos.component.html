@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h2>Autos</h2>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Administradora</th>
+      <th>Crédito</th>
+      <th>Entrada</th>
+      <th>Parcelas</th>
+      <th>Total das Parcelas</th>
+      <th>Observações</th>
+      <th>Juros</th>
+      <th>Percentual</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cota of cotas">
+      <td>{{cota.administradora}}</td>
+      <td>{{cota.credito | currency}}</td>
+      <td>{{cota.entrada | currency}}</td>
+      <td>{{cota.parcelas}}</td>
+      <td>{{cota.totalParcelas | currency}}</td>
+      <td>{{cota.observacoes | currency}}</td>
+      <td>{{cota.juros | currency}}</td>
+      <td>{{cota.percentual + "%"}}</td>
+    </tr>
+  </tbody>
+</table>
