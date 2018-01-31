@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h2>Autos</h2>
+  <h2>Cotas</h2>
 </div>
 
 <table class="table table-striped">
@@ -9,7 +9,6 @@
       <th>Crédito</th>
       <th>Entrada</th>
       <th>Parcelas</th>
-      <th>Total das Parcelas</th>
       <th>Observações</th>
       <th>Juros</th>
       <th>Percentual</th>
@@ -19,13 +18,13 @@
   <tbody>
     <tr *ngFor="let cota of cotas">
       <td>{{cota.administradora}}</td>
-      <td>{{cota.credito | currency}}</td>
-      <td>{{cota.entrada | currency}}</td>
-      <td>{{cota.parcelas}}</td>
-      <td>{{cota.totalParcelas | currency}}</td>
-      <td>{{cota.observacoes | currency}}</td>
-      <td>{{cota.juros | currency}}</td>
+      <td>{{cota.credito | currency:'R$'}}</td>
+      <td>{{cota.entrada | currency:'R$'}}</td>
+      <td>{{cota.parcelas + " (" + (cota.totalParcelas | currency:'R$') + ")"}}</td>
+      <td>{{cota.observacoes + (cota.totalObservacoes > 0 ? " (" + (cota.totalObservacoes | currency:'R$') + ")" : "") }}</td>
+      <td>{{cota.juros | currency:'R$'}}</td>
       <td>{{cota.percentual + "%"}}</td>
+      <td><a [href]="cota.link">Ver</a></td>
     </tr>
   </tbody>
 </table>

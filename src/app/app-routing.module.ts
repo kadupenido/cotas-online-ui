@@ -4,8 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AutosComponent } from './autos/autos.component';
 
 const routes: Routes = [
-    { path: 'autos', component: AutosComponent },
-    { path: '', redirectTo: 'autos', pathMatch: 'full' }
+    { path: '**', component: AutosComponent }
 ];
 
 @NgModule({
